@@ -3,7 +3,7 @@ import './App.scss'
 function App() {
   return (
     <div className="App">
-     This is commit from MAC
+     This is commit from WINDOWS
     </div>
   );
 }
