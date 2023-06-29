@@ -1,8 +1,9 @@
+import './App.scss'
 
 function App() {
   return (
     <div className="App">
-      gfgf
+     This is commit from MAC
     </div>
   );
 }
