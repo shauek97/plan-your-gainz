@@ -1,0 +1,10 @@
+@import '../../styles/settings.scss';
+
+section{
+    margin: $base-size*5 0;
+    text-align: center;
+}
+
+.write{
+    font-size: $base-size;
+}

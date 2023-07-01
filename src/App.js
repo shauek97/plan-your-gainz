@@ -1,10 +1,9 @@
 import './App.scss'
+import Home from './components/pages/Home';
 
 function App() {
   return (
-    <div className="App">
-     This is commit from WINDOWS
-    </div>
+    <Home />
   );
 }
 
