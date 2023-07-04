@@ -1,7 +1,9 @@
-export default function Button() {
+import styles from "./Header.module.scss";
 
-    return(
-      <h3>All rights reserved.</h3>
-    ) 
-  }
-  
+export default function Button() {
+  return (
+    <header>
+      <h1 className={styles.title}>STWÓRZ SWÓJ PLAN TRENINGOWY!</h1>
+    </header>
+  );
+}

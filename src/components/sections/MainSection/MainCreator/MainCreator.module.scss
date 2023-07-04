@@ -1,0 +1,31 @@
+@import '../../../../styles/settings.scss';
+
+.mainBox{
+    height: 500px;
+    max-width: 800px;
+    background-color: red;
+}
+
+.exerciseEmptyField{
+    font-family: $font-second;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: $base-size;
+    min-width: 500px;
+    background-color: $color-light;
+    padding: $base-size;
+}
+
+.description{
+    display: flex;
+    align-items: center;
+    p{
+        margin: 0 $base-size*0.5;
+    }
+
+}
+
+.exercisceParameters{
+    justify-self: end;
+}

@@ -1,8 +1,9 @@
+import styles from './Footer.module.scss';
 
 export default function Button() {
-
-    return(
-      <h3>All rights reserved.</h3>
-    ) 
-  }
-  
+  return (
+    <footer className={styles.box}>
+      <h3 className={styles.rights}>All rights reserved.</h3>
+    </footer>
+  );
+}

@@ -1,0 +1,13 @@
+@import '../../../styles/settings.scss';
+
+.box{
+    max-width: 1400px;
+    margin: $base-size*4 auto;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+h2{
+    color: white;
+}

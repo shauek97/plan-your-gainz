@@ -1,0 +1,12 @@
+@import '../../../styles/settings.scss';
+
+header{
+    max-width: 1400px;
+    text-align: center;
+    margin: $base-size*4 auto;
+}
+
+.title{
+    color: $color-light;
+    font-family: $font-first;
+}
