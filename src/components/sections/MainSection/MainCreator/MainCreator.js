@@ -1,11 +1,22 @@
 import styles from "./MainCreator.module.scss";
+import { useState } from "react";
 
 export default function MainCreator() {
+  const [isName, setIsName] = useState(false);
+  const [name, setName] = useState('');
+
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  }
+
+  console.log(isName)
+
   return (
     <section className={styles.mainCreator}>
       <div className={styles.mainBox}>
         <div className={styles.planName}>
-          <h2>Trening nr 4</h2>
+        {!isName && <input type="text" value={name} onChange={handleNameChange} />}
+        {isName && <h2>{name}</h2>}
         </div>
         <div className={styles.exerciseEmptyField}>
           <div className={styles.description}>
