@@ -1,5 +1,6 @@
 import styles from "./MainCreator.module.scss";
 import { useState } from "react";
+import { FaPencil } from "react-icons/fa";
 
 export default function MainCreator() {
   const [isName, setIsName] = useState(false);
@@ -7,16 +8,24 @@ export default function MainCreator() {
 
   const handleNameChange = (event) => {
     setName(event.target.value);
-  }
+  };
 
-  console.log(isName)
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+    setIsName(true);
+  };
+
+  const pencil = {FaPencil};
+
+  console.log(isName, name)
 
   return (
     <section className={styles.mainCreator}>
       <div className={styles.mainBox}>
         <div className={styles.planName}>
-        {!isName && <input type="text" value={name} onChange={handleNameChange} />}
-        {isName && <h2>{name}</h2>}
+        {!isName && <form onSubmit={handleSubmit}><input type="text" value={name} onChange={handleNameChange} /><button>submit</button></form>}
+        
+        {isName && <><h2>{name}</h2><FaPencil /></>}
         </div>
         <div className={styles.exerciseEmptyField}>
           <div className={styles.description}>
