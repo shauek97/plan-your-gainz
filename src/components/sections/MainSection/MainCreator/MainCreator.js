@@ -1,30 +1,33 @@
 import styles from "./MainCreator.module.scss";
 import { useState } from "react";
+import ExerciseField from "../../../features/ExerciseFIeld/ExerciseField";
 import { FaPencilAlt } from "react-icons/fa";
+import { AiFillPlusCircle } from "react-icons/ai";
+
 
 
 export default function MainCreator() {
   const [isName, setIsName] = useState(false);
   const [name, setName] = useState('');
-  const [exercise, setExercise] = useState([
+  const [exercises, setExercise] = useState([
     {
       id: 1,
-      title: "wyciskanie leżąc"
+      title: "Wyciskanie leżąc"
     },
 
     {
-      id: 1,
-      title: "wyciskanie leżąc"
+      id: 2,
+      title: "Przysiady ze sztangą"
     },
 
     {
-      id: 1,
-      title: "wyciskanie leżąc"
+      id: 3,
+      title: "Martwy ciąg"
     },
     
     {
-      id: 1,
-      title: "wyciskanie leżąc"
+      id: 4,
+      title: "Podciąganie na drążku"
     }
   ]);
 
@@ -52,41 +55,13 @@ export default function MainCreator() {
         
         {isName && <div className={styles.titleHolder}><p className={styles.title}>{name}</p><FaPencilAlt onClick={handlePencilClick} className={styles.icon}/></div>}
         </div>
-        <div className={styles.exerciseEmptyField}>
-          <div className={styles.description}>
-            <h3 className={styles.exerciseId}>1.</h3>
-            <p className={styles.exrciseName}>dfgsffgg</p>
-          </div>
-          <div className={styles.exerciseParameters}>
-            <p>12/4/80kg</p>
-          </div>
-        </div>
-        <div className={styles.exerciseEmptyField}>
-          <div className={styles.description}>
-            <h3 className={styles.exerciseId}>2.</h3>
-            <p className={styles.exrciseName}>dfgsffgg</p>
-          </div>
-          <div className={styles.exerciseParameters}>
-            <p>12/4/80kg</p>
-          </div>
-        </div>
-        <div className={styles.exerciseEmptyField}>
-          <div className={styles.description}>
-            <h3 className={styles.exerciseId}>3.</h3>
-            <p className={styles.exrciseName}>dfgsffgg</p>
-          </div>
-          <div className={styles.exerciseParameters}>
-            <p>12/4/80kg</p>
-          </div>
-        </div>
-        <div className={styles.exerciseEmptyField}>
-          <div className={styles.description}>
-            <h3 className={styles.exerciseId}>4.</h3>
-            <p className={styles.exrciseName}>dfgsffgg</p>
-          </div>
-          <div className={styles.exerciseParameters}>
-            <p>12/4/80kg</p>
-          </div>
+
+        {exercises.map((exercise) => (
+            <ExerciseField key={exercise.id} id={exercise.id} title={exercise.title} />
+          )
+        )}
+        <div className={styles.addingButton}>
+        <AiFillPlusCircle />
         </div>
       </div>
     </section>

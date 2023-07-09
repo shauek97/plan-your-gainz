@@ -1,0 +1,38 @@
+@import "../../../styles/settings.scss";
+
+.exerciseRow{
+    display: flex;
+}
+
+.exerciseEmptyField {
+    border-radius: $base-size;
+    font-family: $font-first;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: $base-size;
+    min-width: 500px;
+    background-color: #ffffff80;
+    padding: $base-size;
+  }
+  
+  .description {
+    display: flex;
+    align-items: center;
+    p {
+      margin: 0 $base-size * 0.5;
+    }
+  }
+  
+  .exercisceParameters {
+    justify-self: end;
+  }
+
+  .trashIcon{
+    display: flex;
+    align-items: center;
+    max-width:50px;
+  font-size: $base-size*2;
+  color: #ffffff80;
+  transition: $transition;
+  }

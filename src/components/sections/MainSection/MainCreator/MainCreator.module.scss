@@ -1,7 +1,7 @@
 @import "../../../../styles/settings.scss";
 
 .mainBox {
-  height: 500px;
+  padding: $base-size;
   max-width: 800px;
   background: rgb(126, 217, 87);
   background: linear-gradient(
@@ -81,26 +81,17 @@
   cursor: pointer;
 }
 
-.exerciseEmptyField {
-  border-radius: $base-size;
-  font-family: $font-first;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: $base-size;
-  min-width: 500px;
-  background-color: #ffffff80;
-  padding: $base-size;
+.addingButton {
+  margin:0 auto;
+  max-width:50px;
+  font-size: $base-size*2;
+  color: #ffffff80;
+  transition: $transition;
 }
 
-.description {
-  display: flex;
-  align-items: center;
-  p {
-    margin: 0 $base-size * 0.5;
-  }
-}
-
-.exercisceParameters {
-  justify-self: end;
+.addingButton:hover {
+  cursor: pointer;
+  scale: 1.1;
+  font-size: $base-size*2;
+  color: #ffffff80;
 }
