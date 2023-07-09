@@ -1,10 +1,32 @@
 import styles from "./MainCreator.module.scss";
 import { useState } from "react";
-import { FaPencil } from "react-icons/fa";
+import { FaPencilAlt } from "react-icons/fa";
+
 
 export default function MainCreator() {
   const [isName, setIsName] = useState(false);
   const [name, setName] = useState('');
+  const [exercise, setExercise] = useState([
+    {
+      id: 1,
+      title: "wyciskanie leżąc"
+    },
+
+    {
+      id: 1,
+      title: "wyciskanie leżąc"
+    },
+
+    {
+      id: 1,
+      title: "wyciskanie leżąc"
+    },
+    
+    {
+      id: 1,
+      title: "wyciskanie leżąc"
+    }
+  ]);
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -15,7 +37,10 @@ export default function MainCreator() {
     setIsName(true);
   };
 
-  const pencil = {FaPencil};
+  const handlePencilClick = (e) =>{
+    e.preventDefault();
+    setIsName(false)
+  }
 
   console.log(isName, name)
 
@@ -23,9 +48,9 @@ export default function MainCreator() {
     <section className={styles.mainCreator}>
       <div className={styles.mainBox}>
         <div className={styles.planName}>
-        {!isName && <form onSubmit={handleSubmit}><input type="text" value={name} onChange={handleNameChange} /><button>submit</button></form>}
+        {!isName && <form onSubmit={handleSubmit}><input type="text" value={name} onChange={handleNameChange} placeholder="Nazwa"/><button>Ustaw</button></form>}
         
-        {isName && <><h2>{name}</h2><FaPencil /></>}
+        {isName && <div className={styles.titleHolder}><p className={styles.title}>{name}</p><FaPencilAlt onClick={handlePencilClick} className={styles.icon}/></div>}
         </div>
         <div className={styles.exerciseEmptyField}>
           <div className={styles.description}>
