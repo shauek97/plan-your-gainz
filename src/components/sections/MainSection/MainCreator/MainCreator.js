@@ -5,7 +5,6 @@ import { FaPencilAlt } from "react-icons/fa";
 import { AiFillPlusCircle } from "react-icons/ai";
 
 
-
 export default function MainCreator() {
   const [isName, setIsName] = useState(false);
   const [name, setName] = useState('');
@@ -45,7 +44,10 @@ export default function MainCreator() {
     setIsName(false)
   }
 
-  console.log(isName, name)
+  const handleTrash = (exerciseId) =>{
+    const updatedExercises = exercises.filter((exercise) => exercise.id !== exerciseId);
+    setExercise(updatedExercises);
+  }
 
   return (
     <section className={styles.mainCreator}>
@@ -57,11 +59,13 @@ export default function MainCreator() {
         </div>
 
         {exercises.map((exercise) => (
-            <ExerciseField key={exercise.id} id={exercise.id} title={exercise.title} />
+            <ExerciseField key={exercise.id} number={exercise.id} title={exercise.title} handleTrash={handleTrash} />
           )
         )}
         <div className={styles.addingButton}>
+          <icon>
         <AiFillPlusCircle />
+        </icon>
         </div>
       </div>
     </section>
