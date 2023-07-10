@@ -60,6 +60,7 @@ export default function MainCreator() {
 
         {exercises.map((exercise) => (
             <ExerciseField key={exercise.id} number={exercise.id} title={exercise.title} handleTrash={handleTrash} />
+            
           )
         )}
         <div className={styles.addingButton}>

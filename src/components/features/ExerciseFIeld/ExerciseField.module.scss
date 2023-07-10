@@ -34,13 +34,14 @@
   max-width: 50px;
   font-size: $base-size * 2;
   color: #ffffff80;
-  transition: $transition;
   icon {
     display: flex;
+    transition: $transition;
+  }
+  icon:hover {
+    cursor: pointer;
+    scale: 1.1;
   }
 }
 
-.trashIcon:hover {
-  cursor: pointer;
-  scale: 1.1;
-}
+
