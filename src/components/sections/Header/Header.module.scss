@@ -1,12 +1,21 @@
 @import '../../../styles/settings.scss';
 
 header{
+    display: flex;
     max-width: 1400px;
-    text-align: center;
-    margin: $base-size*4 auto;
+    justify-content: start;
+    margin: $base-size auto;
+}
+
+.logo{
+    img{
+    height:200px;
+    width: 200px;
+    }
 }
 
 .title{
+    grid-column:2;
     color: $color-light;
     font-family: $font-first;
 }
