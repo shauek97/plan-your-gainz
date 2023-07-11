@@ -13,8 +13,8 @@ export default function ExerciseField(props) {
         <p>12/4/80kg</p>
       </div>
     </div>
-    <div className={styles.trashIcon}>
-    <icon onClick={props.handleTrash(props.key)}><BsFillTrashFill /></icon>
+    <div className={styles.trashIcon} onClick={() => props.handleTrash(props.number)}>
+      <BsFillTrashFill />
     </div>
     </div>
   );

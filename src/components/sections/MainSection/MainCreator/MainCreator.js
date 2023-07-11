@@ -4,30 +4,29 @@ import ExerciseField from "../../../features/ExerciseFIeld/ExerciseField";
 import { FaPencilAlt } from "react-icons/fa";
 import { AiFillPlusCircle } from "react-icons/ai";
 
-
 export default function MainCreator() {
   const [isName, setIsName] = useState(false);
   const [name, setName] = useState('');
   const [exercises, setExercise] = useState([
     {
       id: 1,
-      title: "Wyciskanie leżąc"
+      title: "Wyciskanie leżąc",
     },
 
     {
       id: 2,
-      title: "Przysiady ze sztangą"
+      title: "Przysiady ze sztangą",
     },
 
     {
       id: 3,
-      title: "Martwy ciąg"
+      title: "Martwy ciąg",
     },
     
     {
       id: 4,
-      title: "Podciąganie na drążku"
-    }
+      title: "Podciąganie na drążku",
+    },
   ]);
 
   const handleNameChange = (event) => {
@@ -47,6 +46,7 @@ export default function MainCreator() {
   const handleTrash = (exerciseId) =>{
     const updatedExercises = exercises.filter((exercise) => exercise.id !== exerciseId);
     setExercise(updatedExercises);
+    console.log('iconClicked')
   }
 
   return (
@@ -59,14 +59,11 @@ export default function MainCreator() {
         </div>
 
         {exercises.map((exercise) => (
-            <ExerciseField key={exercise.id} number={exercise.id} title={exercise.title} handleTrash={handleTrash} />
-            
+            <ExerciseField key={exercise.id} number={exercise.id} title={exercise.title} handleTrash={handleTrash}/>
           )
         )}
-        <div className={styles.addingButton}>
-          <icon>
+        <div className={styles.addingButton}>   
         <AiFillPlusCircle />
-        </icon>
         </div>
       </div>
     </section>
