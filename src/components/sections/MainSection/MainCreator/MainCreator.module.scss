@@ -2,6 +2,7 @@
 
 .mainBox {
   padding: $base-size;
+  min-width: 600px;
   max-width: 800px;
   background: rgb(126, 217, 87);
   background: linear-gradient(
@@ -18,6 +19,8 @@
 }
 
 .planName {
+  display: flex;
+  justify-content: center;
   font-size: $base-size * 0.8;
   padding: $base-size;
   transition: $transition;
@@ -55,7 +58,7 @@
     }
   }
 
-  button {
+  .settingButton {
     padding: $base-size * 0.5;
     border: none;
     margin: 0 $base-size;
@@ -64,7 +67,7 @@
     transition: $transition;
   }
 
-  button:hover {
+  .settingButton:hover {
     scale: 1.1;
     cursor: pointer;
   }

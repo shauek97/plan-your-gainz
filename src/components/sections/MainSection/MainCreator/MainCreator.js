@@ -3,33 +3,14 @@ import { useState } from "react";
 import ExerciseField from "../../../features/ExerciseFIeld/ExerciseField";
 import { FaPencilAlt } from "react-icons/fa";
 import { AiFillPlusCircle } from "react-icons/ai";
+import shortid from "shortid";
 
 export default function MainCreator() {
   const [isName, setIsName] = useState(false);
   const [name, setName] = useState('');
   const [exerciseTitle, setExerciseTitle] = useState('');
-  console.log(exerciseTitle)
-  const [exercises, setExercises] = useState([
-    {
-      id: 1,
-      title: "Wyciskanie leżąc",
-    },
-
-    {
-      id: 2,
-      title: "Przysiady ze sztangą",
-    },
-
-    {
-      id: 3,
-      title: "Martwy ciąg",
-    },
-    
-    {
-      id: 4,
-      title: "Podciąganie na drążku",
-    },
-  ]);
+  console.log(exerciseTitle);
+  const [exercises, setExercises] = useState([]);
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -42,25 +23,31 @@ export default function MainCreator() {
 
   const handlePencilClick = (e) =>{
     e.preventDefault();
-    setIsName(false)
-  }
+    setIsName(false);
+  };
 
   const handleTrash = (exerciseId) =>{
     const updatedExercises = exercises.filter((exercise) => exercise.id !== exerciseId);
     setExercises(updatedExercises);
-  }
+  };
 
   const handleExerciseAdding = (e) =>{
     e.preventDefault();
-    setExercises()
-  }
+    let generatedId = shortid.generate();
+
+    const newExercise = {
+      id: shortid.generate(),
+      title: exerciseTitle,
+    };
+    setExercises([...exercises, newExercise]);
+  };
 
   return (
     <section className={styles.mainCreator}>
-      <h1 className={styles.titleWrite}>STWÓRZ SWÓJ PLAN!</h1>
+      <h1 className={styles.titleWrite}>STWÓRZ SWÓJ PLAN TRENINGOWY!</h1>
       <div className={styles.mainBox}>
         <div className={styles.planName}>
-        {!isName && <form onSubmit={handleSubmit}><input type="text" value={name} onChange={handleNameChange} placeholder="Nazwa"/><button>Ustaw</button></form>}
+        {!isName && <form className={styles.creatingName} onSubmit={handleSubmit}><input type="text" value={name} onChange={handleNameChange} placeholder="Nazwa planu"/><button className={styles.settingButton}>Ustaw</button></form>}
         
         {isName && <div className={styles.titleHolder}><p className={styles.title}>{name}</p><FaPencilAlt onClick={handlePencilClick} className={styles.icon}/></div>}
         </div>
