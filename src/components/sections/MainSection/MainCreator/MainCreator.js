@@ -7,8 +7,9 @@ import { AiFillPlusCircle } from "react-icons/ai";
 export default function MainCreator() {
   const [isName, setIsName] = useState(false);
   const [name, setName] = useState('');
-  const [title, setTitle] = useState('');
-  const [exercises, setExercise] = useState([
+  const [exerciseTitle, setExerciseTitle] = useState('');
+  console.log(exerciseTitle)
+  const [exercises, setExercises] = useState([
     {
       id: 1,
       title: "Wyciskanie leżąc",
@@ -46,8 +47,12 @@ export default function MainCreator() {
 
   const handleTrash = (exerciseId) =>{
     const updatedExercises = exercises.filter((exercise) => exercise.id !== exerciseId);
-    setExercise(updatedExercises);
-    console.log('iconClicked')
+    setExercises(updatedExercises);
+  }
+
+  const handleExerciseAdding = (e) =>{
+    e.preventDefault();
+    setExercises()
   }
 
   return (
@@ -64,8 +69,8 @@ export default function MainCreator() {
             <ExerciseField key={exercise.id} number={exercise.id} title={exercise.title} handleTrash={handleTrash}/>
           )
         )}
-        <form className={styles.addingForm}>
-        <input type="text" value={exercises.title} placeholder="Dodaj ćwiczenie"></input>
+        <form className={styles.addingForm} onSubmit={handleExerciseAdding}>
+        <input type="text" value={exercises.title} placeholder="Dodaj ćwiczenie" onChange={(e) => setExerciseTitle(e.target.value)}></input>
         <button className={styles.addingButton}>   
         <AiFillPlusCircle />
         </button>
