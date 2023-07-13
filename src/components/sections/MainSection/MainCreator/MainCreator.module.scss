@@ -86,20 +86,38 @@
   cursor: pointer;
 }
 
+.addingForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $base-size * 0.8;
+  padding: $base-size;
+  input{
+    padding: $base-size * 0.5;
+    font-family: $font-first;
+    font-size: $base-size * 0.8;
+    border: none;
+    background-color: #ffffff80;
+    border-radius: $base-size;
+    transition: $transition;
+  }
+  input:focus {
+    outline: none;
+    animation: pulse 1s infinite;
+  }
+}
+
 .addingButton {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  margin-top: $base-size*0.5;
+  margin: $base-size*0.5 $base-size;
   max-width: 50px;
   font-size: $base-size * 2;
   color: #ffffff80;
   transition: $transition;
-  icon {
-    display: flex;
-    align-items: center;
-  }
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
 }
 
 .addingButton:hover {

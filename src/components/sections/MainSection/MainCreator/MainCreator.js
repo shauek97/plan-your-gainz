@@ -7,6 +7,7 @@ import { AiFillPlusCircle } from "react-icons/ai";
 export default function MainCreator() {
   const [isName, setIsName] = useState(false);
   const [name, setName] = useState('');
+  const [title, setTitle] = useState('');
   const [exercises, setExercise] = useState([
     {
       id: 1,
@@ -63,9 +64,12 @@ export default function MainCreator() {
             <ExerciseField key={exercise.id} number={exercise.id} title={exercise.title} handleTrash={handleTrash}/>
           )
         )}
-        <div className={styles.addingButton}>   
+        <form className={styles.addingForm}>
+        <input type="text" value={exercises.title} placeholder="Dodaj ćwiczenie"></input>
+        <button className={styles.addingButton}>   
         <AiFillPlusCircle />
-        </div>
+        </button>
+        </form>
       </div>
     </section>
   );
