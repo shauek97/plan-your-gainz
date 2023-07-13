@@ -51,6 +51,7 @@ export default function MainCreator() {
 
   return (
     <section className={styles.mainCreator}>
+      <h1 className={styles.titleWrite}>STWÓRZ SWÓJ PLAN!</h1>
       <div className={styles.mainBox}>
         <div className={styles.planName}>
         {!isName && <form onSubmit={handleSubmit}><input type="text" value={name} onChange={handleNameChange} placeholder="Nazwa"/><button>Ustaw</button></form>}
