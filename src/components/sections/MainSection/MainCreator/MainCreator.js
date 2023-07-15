@@ -3,7 +3,6 @@ import { useState } from "react";
 import ExerciseField from "../../../features/ExerciseFIeld/ExerciseField";
 import { FaPencilAlt } from "react-icons/fa";
 import { AiFillPlusCircle } from "react-icons/ai";
-import shortid from "shortid";
 
 export default function MainCreator() {
   const [isName, setIsName] = useState(false);
@@ -33,10 +32,11 @@ export default function MainCreator() {
 
   const handleExerciseAdding = (e) =>{
     e.preventDefault();
-    let generatedId = shortid.generate();
+    setExerciseTitle('');
+    //lokalizacja ostatniego id objektu w tabeli
 
     const newExercise = {
-      id: shortid.generate(),
+      id: exercises.length > 0 ? exercises[exercises.length -1].id + 1 : 1,
       title: exerciseTitle,
     };
     setExercises([...exercises, newExercise]);
@@ -57,7 +57,7 @@ export default function MainCreator() {
           )
         )}
         <form className={styles.addingForm} onSubmit={handleExerciseAdding}>
-        <input type="text" value={exercises.title} placeholder="Dodaj ćwiczenie" onChange={(e) => setExerciseTitle(e.target.value)}></input>
+        <input type="text" value={exerciseTitle} placeholder="Dodaj ćwiczenie" onChange={(e) => setExerciseTitle(e.target.value)}></input>
         <button className={styles.addingButton}>   
         <AiFillPlusCircle />
         </button>
