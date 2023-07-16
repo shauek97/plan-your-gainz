@@ -19,21 +19,10 @@
 }
 
 .planName {
-  display: flex;
-  justify-content: center;
   font-size: $base-size * 0.8;
   padding: $base-size;
   transition: $transition;
-  input {
-    padding: $base-size * 0.5;
-    font-family: $font-first;
-    font-size: $base-size * 0.8;
-    border: none;
-    background-color: #ffffff80;
-    border-radius: $base-size;
-    transition: $transition;
-  }
-
+  
   .title {
     font-weight: 600;
     color: white;
@@ -41,36 +30,53 @@
     font-size: $base-size * 1.5;
   }
 
-  input:focus {
-    outline: none;
-    animation: pulse 1s infinite;
-  }
-
-  @keyframes pulse {
-    0% {
-      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4);
+  .creatingName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $base-size * 0.8;
+    input{
+      padding: $base-size * 0.5;
+      font-family: $font-first;
+      font-size: $base-size * 0.8;
+      border: none;
+      background-color: #ffffff80;
+      border-radius: $base-size;
+      transition: $transition;
     }
-    70% {
-      box-shadow: 0 0 0 12px rgba(0, 0, 0, 0);
+    input:focus {
+      outline: none;
+      animation: pulse 1s infinite;
     }
-    100% {
-      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4);
+      }
+      70% {
+        box-shadow: 0 0 0 12px rgba(0, 0, 0, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+      }
     }
   }
 
   .settingButton {
     padding: $base-size * 0.5;
     border: none;
+    min-width: 100px;
+  
     margin: 0 $base-size;
     background-color: #ffffff80;
     border-radius: $base-size;
     transition: $transition;
   }
+}
 
-  .settingButton:hover {
-    scale: 1.1;
-    cursor: pointer;
-  }
+.settingButton:hover {
+  scale: 1.1;
+  cursor: pointer;
 }
 
 .titleHolder {
@@ -113,8 +119,9 @@
 .addingButton {
   display: flex;
   align-items: center;
-  margin: $base-size*0.5 $base-size;
-  max-width: 50px;
+  justify-content: center;
+  min-width: 100px;
+  margin: 0 $base-size;
   font-size: $base-size * 2;
   color: #ffffff80;
   transition: $transition;

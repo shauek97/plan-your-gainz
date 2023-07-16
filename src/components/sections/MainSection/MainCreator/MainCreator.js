@@ -33,8 +33,6 @@ export default function MainCreator() {
   const handleExerciseAdding = (e) =>{
     e.preventDefault();
     setExerciseTitle('');
-    //lokalizacja ostatniego id objektu w tabeli
-
     const newExercise = {
       id: exercises.length > 0 ? exercises[exercises.length -1].id + 1 : 1,
       title: exerciseTitle,
