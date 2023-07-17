@@ -19,3 +19,13 @@ header{
     color: $color-light;
     font-family: $font-first;
 }
+
+@media(max-width: 768px){
+    header{
+        display: flex;
+        max-width: 1400px;
+        justify-content: center;
+        margin: $base-size auto;
+    }
+  }
+  

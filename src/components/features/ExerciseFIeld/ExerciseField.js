@@ -10,7 +10,7 @@ export default function ExerciseField(props) {
   const [kg, setKg] = useState('');
 
   const handleClick = () => {
-  
+    
 }
 
   return (

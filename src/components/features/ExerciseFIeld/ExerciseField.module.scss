@@ -30,7 +30,7 @@
       background-color: transparent;
       outline: none;
       border: none;
-      margin: 0 $base-size*0.7;
+      margin: 0 $base-size*0.3;
       max-width: $base-size*3;
       text-align: center;
     }
@@ -58,4 +58,34 @@
 .trashIcon:hover {
   cursor: pointer;
   scale: 1.1;
+}
+
+@media(max-width: 768px){
+ 
+  .exerciseEmptyField {
+  
+    min-width: 300px;
+   
+    .exerciseId{
+      font-size: $base-size * 0.7;
+    }
+  
+    .exerciseName {
+      font-size: $base-size * 0.7;
+    }
+  
+    .exerciseParameters {
+      display: flex;
+      align-items: center;
+      input{
+        font-size: $base-size * 0.7;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        margin: 0 2px;
+        max-width: $base-size*2;
+        text-align: center;
+      }
+    }
+  }
 }
