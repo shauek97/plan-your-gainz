@@ -1,6 +1,6 @@
 import styles from "./MainCreator.module.scss";
 import { useState } from "react";
-import ExerciseField from "../../../features/ExerciseFIeld/ExerciseField";
+import ExerciseField from "../../../features/ExerciseField/ExerciseField.js";
 import { FaPencilAlt } from "react-icons/fa";
 import { AiFillPlusCircle } from "react-icons/ai";
 
